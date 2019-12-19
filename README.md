@@ -3,7 +3,7 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|———|
-|nickname|string|null: false, index: true|
+|nickname|string|null: false, unique: true, index: true|
 |email|string|null: false|
 |password|string|null: false|
 |text|text||
