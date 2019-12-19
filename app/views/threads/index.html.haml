@@ -1,0 +1,9 @@
+threads#index.html.haml
+
+%h3 ログイン成功
+%h1 スレッドトップページ
+= link_to "マイページ", users_path(current_user.id), class: 'btn'
+%p
+= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+%p
+= link_to "トップページに戻る", root_path, class: 'btn'

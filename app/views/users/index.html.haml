@@ -1,0 +1,6 @@
+%h1 マイページ
+
+%p
+= link_to "プロフィール", edit_user_path(current_user.id), class: 'btn'
+%p
+= link_to "トップページに戻る", root_path, class: 'btn'
