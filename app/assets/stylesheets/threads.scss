@@ -1,3 +1,199 @@
-// Place all the styles related to the threads controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+.contents {
+  padding-left: 200px;
+  // padding-right: 200px;
+  width:calc(100% - 200px);
+
+  &__body {
+
+    &__stockname {
+    font-size: 25px;
+    color: #0066cc;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+    }
+
+    &__menubar {
+      background-color: #add8e6;
+      color: #0066cc;
+      display: flex;
+
+      &__1 {
+
+      }
+
+    }
+
+    &__stock-info {
+      padding: 10px;
+
+      &__chart {
+        float: left;
+        margin-right: 30px;
+        padding: 5px;
+        background-color: #fff;
+      }
+
+      &__price {
+        float: left;
+        padding-top: 5px;
+        min-width: 238px;
+        max-width: 270px;
+        text-align: right;
+
+        &__today {
+          margin-bottom: 15px;
+          display: flex;
+
+          &__left {
+            color: #333333;
+            font-size: 24px;
+            padding-top: 10px;
+            font-weight: bold;
+          }
+          
+          &__right {
+            font-size: 100%;
+            color: #c33;
+            padding-top: 15px;
+            padding-left: 40px;
+          }
+        }
+
+        &__yesterday {
+          display: flex;
+          margin-bottom: 5px;
+
+
+          &__left {
+            color: #333333;
+            font-size: 14px;
+            font-weight: bold;
+          }
+          
+          &__right {
+            font-size: 14px;
+            color: #333333;
+            padding-left: 40px;
+          }
+        }
+
+        &__begin {
+          display: flex;
+          margin-bottom: 5px;
+
+          &__left {
+            color: #333333;
+            font-size: 14px;
+            font-weight: bold;
+          }
+          
+          &__right {
+            font-size: 14px;
+            color: #333333;
+            padding-left: 70px;
+            text-align: right;
+          }
+        }
+
+        &__high {
+          display: flex;
+          margin-bottom: 5px;
+
+          &__left {
+            color: #333333;
+            font-size: 14px;
+            font-weight: bold;
+          }
+          
+          &__right {
+            font-size: 14px;
+            color: #333333;
+            padding-left: 70px;
+            text-align: right;
+          }
+        }
+        
+        &__low {
+          display: flex;
+          margin-bottom: 5px;
+
+          &__left {
+            color: #333333;
+            font-size: 14px;
+            font-weight: bold;
+          }
+          
+          &__right {
+            font-size: 14px;
+            color: #333333;
+            padding-left: 75px;
+            text-align: right;
+          }
+        }
+      }
+    }
+    &__menubar {
+      background-color: #B0E0E6;
+      color: #0066cc;
+      width: 100%;
+      &__1 {
+
+      }
+    }
+    
+    // .messages {
+    //   background-color: #FAFAFA;
+    //   box-sizing: border-box;
+    //   padding: 46px 40px 0;
+    //   height: calc(100vh - 190px);
+    //   overflow: scroll;
+    .message {
+      margin-top: 30px;
+
+      &__upper-message {
+        display: flex;
+
+        &__user-name {
+          color: black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        &__date {
+          color: grey;
+          font-size: 12px;
+          padding-left: 10px;
+          padding-top: 5px;
+        }
+      }
+
+      &__lower-message {
+        margin-top: 10px;
+
+        &__content {
+          color: black;
+          font-size: 20px;
+          margin-bottom: 40px;
+        }
+      }
+    }
+    
+    &__posts {
+
+      &__container {
+
+        &__form-group {
+          
+        }
+      }
+    }
+  }
+}
