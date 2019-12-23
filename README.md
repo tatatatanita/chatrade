@@ -10,8 +10,8 @@
 ### Association
 - has_many :posts
 - has_many :predictions
-- has_many :threads_users
-- has_many :threads, through: :threads_users
+- has_many :forums_users
+- has_many :forums, through: :forums_users
 
 
 ## predictionsテーブル
@@ -26,7 +26,7 @@
 ### Association
 - belongs_to :user
 - has_many :comments
-- has_many :likes-pred
+- has_many :likes_pred
 
 
 ## commentsテーブル
@@ -45,31 +45,31 @@
 |text|text|null: false|
 |image|text||
 |user|references|null: false, foreign_key: true|
-|thread|references|null: false, foreign_key: true|
+|forum|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :thread
-- has_many :likes-posts
+- belongs_to :forum
+- has_many :likes_posts
 
 
-## threadsテーブル
+## forumsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|text|null: false, unique: true|
 ### Association
 - has_many :posts
-- has_many :threads_users
-- has_many :threads, through: :threads_users
+- has_many :forums_users
+- has_many :forums, through: :forums_users
 
 
-## threads_usersテーブル
+## forums_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
-|thread|references|null: false, foreign_key: true|
+|forum|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :thread
+- belongs_to :forum
 
 
 ## likes-postsテーブル

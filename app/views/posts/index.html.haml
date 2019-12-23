@@ -1,0 +1,137 @@
+-# forumds#index.html.haml
+
+-# %h3 ログイン成功
+-# %h1 スレッドトップページ
+-# = link_to "マイページ", users_path(current_user.id), class: 'btn'
+-# %p
+-# = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+-# %p
+-# = link_to "投稿する", forum_path(current_user.id), class: 'btn'
+
+.contents
+  .contents__body
+    .contents__body__stockname
+      株式会社 i & D ホールディングス 2019/12/19〜
+    .contents__body__menubar
+      .contents__body__menubar__1
+      %p 投稿する &nbsp;
+      .contents__body__menubar__1
+      %p マイページ &nbsp;
+      .contents__body__menubar__1
+      %p ログアウト &nbsp;
+    .contents__body__stock-info
+      .contents__body__stock-info__chart
+        = image_tag("http://money.enjyuku-blog.com/wp/wp-content/uploads/2016/05/201605166176.png", height: '180', width: '350')
+      .contents__body__stock-info__price
+        .contents__body__stock-info__price__today
+          .contents__body__stock-info__price__today__left
+            %p 9,980
+          .contents__body__stock-info__price__today__right
+            %span -2870(-22.3%)
+        .contents__body__stock-info__price__yesterday
+          .contents__body__stock-info__price__yesterday__left
+            %p 前日終値
+          .contents__body__stock-info__price__yesterday__right
+            %span 12,850 &nbsp; (12/18)
+        .contents__body__stock-info__price__begin
+          .contents__body__stock-info__price__begin__left
+            %p 始値
+          .contents__body__stock-info__price__begin__right
+            %span 14,050 &nbsp;（09:12）
+        .contents__body__stock-info__price__high
+          .contents__body__stock-info__price__high__left
+            %p 高値
+          .contents__body__stock-info__price__high__right
+            %span 15,850 &nbsp;（10:28）
+        .contents__body__stock-info__price__low
+          .contents__body__stock-info__price__low__left
+            %p 安値
+          .contents__body__stock-info__price__low__right
+            %span 9,980 &nbsp;&nbsp; (14:59)
+    .contents__body__menubar
+      %p メニューバー
+
+    .message
+      .message__upper-message
+        .message__upper-message__user-name
+          -# = message.user.name
+          美人女子高生トレーダー
+        .message__upper-message__date
+          -# = message.created_at.strftime("%Y/%m/%d %H:%M")
+          2019/12/09 14:37
+      .message__lower-message
+        村神ファンドよ、生きておるか？
+        -# - if message.content.present?
+          %p.message__lower-message__content
+            -# = message.content
+        -# = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+    .message
+      .message__upper-message
+        .message__upper-message__user-name
+          -# = message.user.name
+          村神ファンド
+        .message__upper-message__date
+          -# = message.created_at.strftime("%Y/%m/%d %H:%M")
+          2019/12/09 14:07
+      .message__lower-message
+        はっきり言う、ここで買えないやつは株向いてないから。
+        -# - if message.content.present?
+          %p.message__lower-message__content
+            -# = message.content
+        -# = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+    .message
+      .message__upper-message
+        .message__upper-message__user-name
+          -# = message.user.name
+          村神ファンド
+        .message__upper-message__date
+          -# = message.created_at.strftime("%Y/%m/%d %H:%M")
+          2019/12/09 14:05
+      .message__lower-message
+        簡単に過ぎるチャート
+        -# - if message.content.present?
+          %p.message__lower-message__content
+            -# = message.content
+        -# = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+      .message
+        .message__upper-message
+          .message__upper-message__user-name
+            -# = message.user.name
+            村神ファンド
+          .message__upper-message__date
+            -# = message.created_at.strftime("%Y/%m/%d %H:%M")
+            2019/12/09 14:03
+        .message__lower-message
+          3分足、出来高、分かり易すぎるだろ。再びS、張り付くから
+          = @post.text
+          -# - if message.content.present?
+            %p.message__lower-message__content
+              -# = message.content
+          -# = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+      .message
+        .message__upper-message
+          .message__upper-message__user-name
+            -# = message.user.name
+            村神ファンド
+          .message__upper-message__date
+            -# = message.created_at.strftime("%Y/%m/%d %H:%M")
+            2019/12/09 13:59
+        .message__lower-message
+          打診買い
+          -# - if message.content.present?
+            %p.message__lower-message__content
+              -# = message.content
+          -# = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+      .contents__body__posts
+        .contents__body__posts__container
+          .contents__body__posts__container__form-group
+            %input{name: "email", type: "text", class: "form-control", height: '180', width: '350'}
+            %button  投稿する
+
+
+    .contents__body__sidebar
