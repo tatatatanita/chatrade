@@ -1,4 +1,4 @@
-class ThreadsController < ApplicationController
+class ForumsController < ApplicationController
 
   def index
   end
@@ -8,5 +8,5 @@ class ThreadsController < ApplicationController
 
   def create
   end
-
+  
 end
