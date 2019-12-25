@@ -1,13 +1,16 @@
 class ForumsController < ApplicationController
 
+  def index
+  end
+
   def new
-    @group = Group.new
-    @group.users << current_user
+    @forum = Forum.new
+    # @forum.users << current_user
   end
 
   def create
-    @group = Group.new(group_params)
-    if @group.save
+    @forum = Forum.new(forum_params)
+    if @forum.save
       redirect_to root_path, notice: 'グループを作成しました'
     else
       render :new
@@ -15,8 +18,8 @@ class ForumsController < ApplicationController
   end
 
   private
-  def group_params
-    params.require(:group).permit(:name, user_ids: [] )
+  def forum_params
+    params.require(:forum).permit(:name, user_ids: [] )
   end
   
 end
