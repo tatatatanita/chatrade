@@ -106,7 +106,7 @@
             2019/12/09 14:03
         .message__lower-message
           3分足、出来高、分かり易すぎるだろ。再びS、張り付くから
-          = @post.text
+          -# = @post.text
           -# - if message.content.present?
             %p.message__lower-message__content
               -# = message.content
@@ -127,11 +127,35 @@
               -# = message.content
           -# = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
-      .contents__body__posts
-        .contents__body__posts__container
-          .contents__body__posts__container__form-group
-            %input{name: "email", type: "text", class: "form-control", height: '180', width: '350'}
-            %button  投稿する
+    .form
+      = form_for @post do |f|
+        = f.text_field :text, class: 'container', placeholder: 'type a post'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = f.file_field :image, class: 'hidden'
+        = f.submit '投稿する', class: 'form__submit'
 
+
+
+
+      -# .form
+      -#   .form_with
+      -#     .form_with__posts
+      -#       .form_with__posts__container
+      -#         .form_with__posts__container__form-group
+      -#           %input{name: "text", type: "text", class: "form-control", height: '180', width: '350'}
+      -#           %button.btn.btn-default  投稿する
+
+
+
+
+      -#   .form
+      -#     = form_for [@post] do |f|
+      -#       = f.text_field :content, class: 'form__post', placeholder: '  type a post'
+      -#       .form__mask
+      -#         = f.label :image, class: 'form__mask__image' do
+      -#           = fa_icon 'picture-o', class: 'icon'
+      -#           = f.file_field :image, class: 'hidden'
+      -#       = f.submit 'Send', class: 'form__submit'
 
     .contents__body__sidebar
