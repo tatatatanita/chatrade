@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_071349) do
+ActiveRecord::Schema.define(version: 2019_12_25_064626) do
+
+  create_table "forum_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "forum_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["forum_id"], name: "index_forum_users_on_forum_id"
+    t.index ["user_id"], name: "index_forum_users_on_user_id"
+  end
 
   create_table "forums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "name", null: false
@@ -22,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_071349) do
     t.text "text", null: false
     t.text "image"
     t.bigint "user_id", null: false
-    t.bigint "forum_id", null: false
+    t.bigint "forum_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["forum_id"], name: "index_posts_on_forum_id"
@@ -43,6 +52,8 @@ ActiveRecord::Schema.define(version: 2019_12_23_071349) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "forum_users", "forums"
+  add_foreign_key "forum_users", "users"
   add_foreign_key "posts", "forums"
   add_foreign_key "posts", "users"
 end

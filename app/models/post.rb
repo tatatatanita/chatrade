@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
   belongs_to :user
-  belongs_to :forum
-  has_many :likes_posts
+  belongs_to :forum, optional: true
+  # has_many :likes_posts
 end
